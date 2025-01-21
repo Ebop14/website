@@ -1,20 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './Header';
-import Button from 'react-bootstrap/Button';
+import { Navbar } from 'react-bootstrap';
+
+
+function Header(){
+  return(
+      <header className="App-header">
+      </header>     
+  ) 
+}
 
 function App() {
   return (
     <>
-      <div className="App">
-        <Header></Header>
+    <div id="Navbar">
+      <div class="nav-name">
+        <a href="#">Ethan Child</a>
       </div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About Me</a>
+        <a href="#">Projects</a>
+      </div>
+      <div id="Body">
 
-      <p>
-        test 2
-      </p>
-      <div>
-        <p>test</p>
+      </div>
+    </div>
+      <div className="App">
       </div>
     </>
     

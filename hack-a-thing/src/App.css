@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
+
+@font-face {
+  font-family: 'Dimitri';
+  src: url('src/dimitri') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(74, 122, 199);
+  background-color: #B1DDF1;
 }
 
 @keyframes App-logo-spin {
@@ -24,7 +32,7 @@ body {
 
 .App {
   text-align: center;
-  background-color: rgb(74, 122, 199);
+  background-color: #B1DDF1;
 }
 
 .App-logo {
@@ -40,7 +48,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #0D160B;
 }
 .App #BodyText{
   background-color: rgb(74, 122, 199);
@@ -52,7 +60,7 @@ body {
   height:50px;
   align-items: center;
   top: 0;
-  background-color: rgb(74, 122, 199);
+  background-color: #B1DDF1;
   border-width: 1px;
   border-left: black;
   border-right: black;
@@ -66,7 +74,7 @@ body {
 }
 
 #Navbar .nav-links a{
-  color: rgb(255, 255, 255);
+  color: #0D160B;
   text-decoration: none;
   font-family: Lato;
   font-size: 30px;
@@ -82,7 +90,7 @@ body {
 }
 
 #Navbar .nav-name a{
-  color: rgb(255, 255, 255);
+  color: #0D160B;
   text-decoration: none;
   font-family: Lato;
   font-size: 30px;
@@ -108,7 +116,6 @@ span.BigParagraph {
   font-family: Lato;
   color: white;
 }
-
 
 span.BigParagraph h1{
   font-family: Lato;

@@ -1,10 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
-import { Navbar } from 'react-bootstrap';
 import rugbyImage from './images/rugbyPic.jpeg';
-import batteryPic from './images/battery_selfie.jpeg'
-import bananna from './images/IMG_9674_Original.jpg'
-
+import batteryPic from './images/battery_selfie.jpg';
+import bananna from './images/IMG_9674_Original.jpg';
+import headshot from './images/headshot.jpeg';
 
 function Header(){
   return(
@@ -59,6 +57,7 @@ function App() {
         <a id="topLink" href="#AboutMeBox">About Me</a>
         <a id="topLink" href="#">Projects</a>
         <a id="topLink" href="#">Contact</a>
+
       </div>
 
     </div>
@@ -66,11 +65,12 @@ function App() {
     <div></div>
 
     <div className="BigParagraph">
-      <img src='https://media.licdn.com/dms/image/v2/C4D03AQGj3D50zP4hUQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1609527769822?e=1743033600&v=beta&t=kSKPnVTEOTrdsIqd-ec_9XqCvh1_JQEg3hzY1cdPuAk'
+      <img src={headshot}
       ></img>
 
       <h1 style={{fontFamily:'Dimitri', paddingLeft:'10px'}}>
-          Hi! My name is Ethan, and I'm a Junior at Dartmouth double majoring in Economics and CS. Starting in my Freshman Summer, I have ~2 years worth of experience in Venture Capital at Battery Ventures. 
+          Hi! My name is Ethan, and I'm a Junior at Dartmouth double majoring in Economics and CS. Starting in my Freshman Summer, I have ~2 years worth of experience in Venture Capital at Battery Ventures.
+          I'm looking for roles at startups now - reach out if you're building anything!
         </h1>
     </div>
     
@@ -80,19 +80,31 @@ function App() {
         <HorizontalItems
         picture={rugbyImage}
         title="Rugby"
-        description="On campus, I play as a front rower for the Dartmouth Rugby Football Club for the first team, where I helped the team finish Top 10 in NCR D1."
+        description="On campus, I play as a front rower for the Dartmouth Rugby Football Club for the first team. My contributions helped the team to a Top 10 finish in NCR D1. I actually walked onto the team with no previous experience with the sport - so I'm pretty good at learning new skills!"
         ></HorizontalItems>
         <HorizontalItems
         picture={bananna}
         title="Econ and CS"
-        description="Academically, I'm a double major in Economics and Computer Science. I'm proficient in Game Theory, Algorithm Design, Cybersecurity CTFs.">
+        description="Academically, I'm a double major in Economics and Computer Science. In Economics, I focus on Game Theory, but have also taken courses in Domestic / International Finance and Industrial Organization. In CS, I've taken courses in Algorithm Design, Cybersecurity, Software Engineering, and ML.">
         </HorizontalItems>
         <HorizontalItems
         picture={batteryPic}
-        title="Venture Capital"
-        description="Through a combination of remote and in-person internships, I've "
+        title="VC"
+        description="Through a combination of remote and in-person internships, I've worked in Venture Capital at Battery Ventures for ~2 years. I started working at Battery my Freshman Summer, sourcing companies. My performance enventually led to a 10 month, full-time, off-cycle internship offer."
         ></HorizontalItems>
+      
+
+
       </div>
+      
+      <div id='ContactBox'>
+        <a>Reach Out</a>
+        <a>Email</a>
+        <a>LinkedIn</a>
+        <a>Resume</a>
+        <a>GitHub</a>
+      </div>
+
       
     </div>
     </>

@@ -138,7 +138,40 @@ body {
 span.BigParagraph h1{
   font-family: Lato;
   color: white;
+}
+
+#ContactBox{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 10vh;
+  margin-left: 20vh;
+  width: 150vh;
+  
+}
+
+#ContactBox a{
+  flex: 1 0 40%;
+  padding: 2vh;
+  border-style: solid;
+  border-color: black;
+  margin-left: 5vh;
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+  margin-right: 2.5vh;
+  font-size: 4vh;
+  box-shadow: 3vh 3vh;
+  background-color: #F5F5DC;
+  transition: all ease 0.3s;
+}
+
+#ContactBox a:hover{
+  background: lightblue;
+  box-shadow: 3.5vh 3.5vh;
   
 }
 
 
+#ContactBox a:first-child{
+  flex: 0 1 100%;
+}

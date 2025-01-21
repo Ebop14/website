@@ -1,28 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: black;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(74, 122, 199);
 }
 
 @keyframes App-logo-spin {
@@ -34,17 +16,46 @@
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App {
+  text-align: center;
+  background-color: rgb(74, 122, 199);
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: rgb(74, 122, 199);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App #BodyText{
+  background-color: rgb(74, 122, 199);
+  font-family: Lato;
+}
+
 #Navbar {
   display: flex;
   height:50px;
   align-items: center;
   top: 0;
-  background-color: black;
+  background-color: rgb(74, 122, 199);
   border-width: 1px;
-  border-style: solid;
   border-left: black;
   border-right: black;
-  border-image: radial-gradient(black, white) 1;
   justify-content: space-between;
 }
 
@@ -77,4 +88,29 @@
   font-size: 30px;
   margin: 10px;
   justify-content: flex-start;
+}
+
+.HorizontalList {
+  border-style: solid;
+  border-color: black;
+}
+
+#AboutMeBox{
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;  
+}
+
+span.BigParagraph {
+  display: flex;
+  width: 50%;
+  float: right;
+  font-family: Lato;
+  color: white;
+}
+
+
+span.BigParagraph h1{
+  font-family: Lato;
+  color: white;
 }

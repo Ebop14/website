@@ -7,7 +7,9 @@ I will be building a personal portfolio website in React / JS
 I had been meaning to build a personal website for a while, but I never had the time. I had also wanted to learn react for a while, and decided to kill two birds with one stone, building a porfolio / design website. 
 
 Include some screenshots.
-[How?](https://help.github.com/articles/about-readmes/#relative-links-and-image-paths-in-readme-files)
+![Screenshot 2025-01-22 at 1 34 44 AM](https://github.com/user-attachments/assets/f1849419-3703-45e4-a722-c9527e2af3ad)
+![Screenshot 2025-01-22 at 1 34 51 AM](https://github.com/user-attachments/assets/3b0fd546-78ee-4b0c-b210-5868f1cf8500)
+![Screenshot 2025-01-22 at 1 34 55 AM](https://github.com/user-attachments/assets/896178ec-38b1-4832-a13e-9761466b62d5)
 
 ## Who Did What?
 
@@ -16,6 +18,7 @@ I (Ethan) worked on everything
 ## What you learned
 
 I learned quite a bit about CSS, flexboxes, and formatting. Much of what I learned in Figma was applicable, but figuring out how to build it in React / JS / CSS was a unique challenge. 
+
 
 ## Authors
 

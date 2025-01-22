@@ -23,6 +23,7 @@ function HorizontalItems(props){
     alignItems: 'center',
     boxShadow: '20px 20px rgba(0, 0, 0, 0.5)',
     color: 'grey',
+    backgroundColor: '#B1DDF1',
     transition:'transform 0.2s'}}
     onMouseOver={(e) => e.currentTarget.style.transform = 'translateX(10px)'}
     onMouseOut={(e) =>  e.currentTarget.style.transform = 'translateX(-10px)'}
@@ -35,8 +36,8 @@ function HorizontalItems(props){
         height: '100%',
         borderColor: 'white'}}></img>
 
-      <h1 style={{ fontFamily: 'Space Grotesk', color: 'white'}}>{props.title}</h1>
-      <p style={{ fontFamily: 'Space Grotesk', color: 'white', paddingLeft:'10px', paddingRight:'10px'}}>{props.description}</p>
+      <h1 style={{ fontFamily: 'Space Grotesk', color: 'black'}}>{props.title}</h1>
+      <p style={{ fontFamily: 'Space Grotesk', color: 'black', paddingLeft:'10px', paddingRight:'10px'}}>{props.description}</p>
       </span>
   )
 }
@@ -47,11 +48,7 @@ function App() {
     <>
 
     <div id="Navbar">
-      
-      <div class="nav-name">
-        <a href="#">Ethan Child</a>
-      </div>
-      
+    
       <div class="nav-links">
         <a id="topLink" href="#">Home</a>
         <a id="topLink" href="#AboutMeBox">About Me</a>
@@ -68,7 +65,7 @@ function App() {
       <img src={headshot}
       ></img>
 
-      <h1 style={{fontFamily:'Dimitri', paddingLeft:'10px'}}>
+      <h1 style={{paddingLeft:'10px'}}>
           Hi! My name is Ethan, and I'm a Junior at Dartmouth double majoring in Economics and CS. Starting in my Freshman Summer, I have ~2 years worth of experience in Venture Capital at Battery Ventures.
           I'm looking for roles at startups now - reach out if you're building anything!
         </h1>
@@ -99,13 +96,11 @@ function App() {
       
       <div id='ContactBox'>
         <a>Reach Out</a>
-        <a>Email</a>
-        <a>LinkedIn</a>
-        <a>Resume</a>
-        <a>GitHub</a>
-      </div>
-
-      
+        <a href="mailto:ethanvchild@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/ethan-child/" target="_blank">LinkedIn</a>
+        <a href="src/Resume.pdf" download="Resume.pdf">Resume</a>
+        <a href="https://github.com/Ebop14" target="_blank">GitHub</a>
+      </div>      
     </div>
     </>
   );

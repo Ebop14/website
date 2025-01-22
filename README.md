@@ -1,10 +1,10 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/YLbyQW4X)
 # Hack Technology / Project Attempted
-I will be building a small web app after learning React.
+I will be building a personal portfolio website in React / JS
 
 ## What you built? 
 
-TODO: Short description of what you attempted to build
+I had been meaning to build a personal website for a while, but I never had the time. I had also wanted to learn react for a while, and decided to kill two birds with one stone, building a porfolio / design website. 
 
 Include some screenshots.
 [How?](https://help.github.com/articles/about-readmes/#relative-links-and-image-paths-in-readme-files)

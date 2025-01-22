@@ -15,7 +15,7 @@ I (Ethan) worked on everything
 
 ## What you learned
 
-TODO: what worked / what didn't work
+I learned quite a bit about CSS, flexboxes, and formatting. Much of what I learned in Figma was applicable, but figuring out how to build it in React / JS / CSS was a unique challenge. 
 
 ## Authors
 

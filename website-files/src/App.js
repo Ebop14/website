@@ -110,7 +110,7 @@ function App() {
         <div>
           <img src={battery}></img>
 
-          <p>At Battery, I cultivated a deal pipeline of ~1000+ companies, sourcing more than 100 companies per week and resulting in ~20 propietary deals.  
+          <p>At Battery, I cultivated a deal pipeline of ~1000+ companies, sourcing more than 100 companies per week and resulting in ~20 proprietary deals.  
             Thanks to my extended internship, I commanded more responsibility than other interns - whilst other interns led calls with Associates and Analysts present, I led them alone. 
             My work at Battery resulted in 10+ companies being presented to senior leadership in the firm. I operated in the Application Layer B2B SaaS area, but I ran projects in 
             the Gaming Payments, Marketing Mix Modeling, Physical Security, and Ticketing Spaces.</p>
@@ -123,7 +123,7 @@ function App() {
         <div>
           <img src={battery}></img>
 
-          <p>In addition to typical analyst responsibilites, I was also tasked with running the Battery Ventures Externship, a remote 50-person program dedicated to educating students in 
+          <p>In addition to typical analyst responsibilities, I was also tasked with running the Battery Ventures Externship, a remote 50-person program dedicated to educating students in 
             Venture Capital. I created / cultivated ~100 hours worth of VC-related training material and taught 16 live weekly lessons about VC principles
             such as initial outreach, ARR waterfalls, and SaaS metrics. My work running the Externship resulted in ~2,000 companies sourced and 17 diligence projects completed. 
             I was also interviewed ~600 applicants for the Externship, assessing students on technicals, VC knowledge, and behavioral questions.</p>
@@ -136,7 +136,7 @@ function App() {
         <div>
           <img src={hackLab}></img>
 
-          <p>In my Junior Fall, I took a hacking / cybsecurity course that required me to
+          <p>In my Junior Fall, I took a hacking / cybersecurity course that required me to
             to exploit binaries, pop shells and find flags. Most of the course was an
             application of system design and assembly work. Towards the end of finding
             flags, I used brute force, integer / buffer overflow, ROP chains, and format
@@ -158,7 +158,7 @@ function App() {
             began with conducting 10+ user interviews to discover a college student's needs. 
             From there, I began iterating over grayscale prototypes, before then moving on
             to full-color frames. The final product consisted of 100+ frames and 20+ original
-            assets. For my work, I recieved a citation (the highest grade possible) from
+            assets. For my work, I received a citation (the highest grade possible) from
             my professor. She awarded the citation for my "unwavering dedication to the 
             field of UI/UX through the culmination of my final class project."
           </p>

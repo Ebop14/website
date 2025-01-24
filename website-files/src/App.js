@@ -29,8 +29,8 @@ function HorizontalItems(props){
     color: 'grey',
     backgroundColor: '#C89933',
     transition:'transform 0.2s'}}
-    onMouseOver={(e) => e.currentTarget.style.transform = 'translateX(5%)'}
-    onMouseOut={(e) =>  e.currentTarget.style.transform = 'translateX(-5%)'}
+    onMouseOver={(e) => e.currentTarget.style.transform = 'translateX(2.5%)'}
+    onMouseOut={(e) =>  e.currentTarget.style.transform = 'translateX(-2.5%)'}
 
     >
       <img src={props.picture}  

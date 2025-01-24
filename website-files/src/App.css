@@ -172,7 +172,9 @@ div.BigParagraph h1{
   
   margin: 10vh auto; 
 
-  padding:1vh;
+  padding: 1vh 3vw;
+
+  box-shadow: 2vw 2vh;
 }
 
 .Projects div {
@@ -194,12 +196,32 @@ div.BigParagraph h1{
   margin: 1% 5%;
 }
 
+.Projects video{
+  width: 20%;
+  height: auto;
+  margin: 1% 7.5%;
+  float: right;
+}
+
 .Projects p{
   margin: 0;
   line-height: 1.5;
 
   font-family: Space Grotesk;
   text-align: left;
+  float: left;
+}
+
+#Externship{
+  background-color: #C8ADC0;
+}
+
+#WHPH{
+  background-color: #E9C46A;
+}
+
+#Hacklab{
+  background-color: #99D19C;
 }
 
 #ProjectTitle {

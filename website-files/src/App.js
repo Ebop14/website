@@ -5,6 +5,8 @@ import bananna from './images/IMG_9674_Original.jpg';
 import headshot from './images/headshot.jpeg';
 import resume from './Resume.pdf';
 import battery from './images/battery.png'
+import workHard from "./images/work_hard_play_hard.mov"
+import hackLab from "./images/hacklab-pic.png"
 
 function Header(){
   return(
@@ -102,7 +104,7 @@ function App() {
         </div>
       </div>
 
-      <div className="Projects">
+      <div className="Projects" id="Pipeline">
         <h1>Deal Pipeline</h1>
 
         <div>
@@ -110,21 +112,56 @@ function App() {
 
           <p>At Battery, I cultivated a deal pipeline of ~1000+ companies, sourcing more than 100 companies per week and resulting in ~20 propietary deals.  
             Thanks to my extended internship, I commanded more responsibility than other interns - whilst other interns led calls with Associates and Analysts present, I led them alone. 
-            My work at Battery resulted in 10+ companies being presented to senior leadership in the firm. My work was mostly in the Application Layer B2B SaaS area, but I ran projects in 
+            My work at Battery resulted in 10+ companies being presented to senior leadership in the firm. I operated in the Application Layer B2B SaaS area, but I ran projects in 
             the Gaming Payments, Marketing Mix Modeling, Physical Security, and Ticketing Spaces.</p>
         </div>
       </div>
 
-      <div className="Projects">
+      <div className="Projects" id="Externship">
         <h1>Battery Ventures Externship</h1>
 
         <div>
           <img src={battery}></img>
 
-          <p>At Battery, in addition to typical analyst responsibilites, I was also tasked with running the Battery Ventures Externship, a fully remote 50-person program dedicated to educating students on the 
-            work required to be a Venture Capital Analyst. My work in the Externship included creating / cultivating ~100 hours worth of VC-related training material, teaching 16 live weekly lessons about VC principles
-            such as initial outreach, ARR waterfalls, and SaaS metrics. My work running the Externship resulted in an independent ~2,000 companies sourced and 17 diligence projects completed. I was also responsible for 
-            interviewing ~600 applicants for the Externship program, assessing students on technicals, VC knowledge, and behavioral questions. </p>
+          <p>In addition to typical analyst responsibilites, I was also tasked with running the Battery Ventures Externship, a remote 50-person program dedicated to educating students in 
+            Venture Capital. I created / cultivated ~100 hours worth of VC-related training material and taught 16 live weekly lessons about VC principles
+            such as initial outreach, ARR waterfalls, and SaaS metrics. My work running the Externship resulted in ~2,000 companies sourced and 17 diligence projects completed. 
+            I was also interviewed ~600 applicants for the Externship, assessing students on technicals, VC knowledge, and behavioral questions.</p>
+        </div>
+      </div>
+
+      <div className="Projects" id="Hacklab">
+        <h1>Hacklab: Binary Analysis CTFs</h1>
+
+        <div>
+          <img src={hackLab}></img>
+
+          <p>In my Junior Fall, I took a hacking / cybsecurity course that required me to
+            to exploit binaries, pop shells and find flags. Most of the course was an
+            application of system design and assembly work. Towards the end of finding
+            flags, I used brute force, integer / buffer overflow, ROP chains, and format
+            specifier attacks to execute shells. In the final exam, an official CTF, I was 
+            1 of 4 students to find a difficult flag (of a class of ~20). I was also the
+            only student to find (and exploit) an unintended oversight in the server.
+          </p>
+        </div>
+      </div>
+
+      <div className="Projects" id="WHPH">
+        <h1>Work Hard Play Hard</h1>
+
+        <div>
+          <video autoplay muted controls playsinline src={workHard}></video>
+
+          <p>For my final project in COSC 25, I designed a Figma prototype for college students
+            to improve time management, mental health, and social adaptivity. My design process
+            began with conducting 10+ user interviews to discover a college student's needs. 
+            From there, I began iterating over grayscale prototypes, before then moving on
+            to full-color frames. The final product consisted of 100+ frames and 20+ original
+            assets. For my work, I recieved a citation (the highest grade possible) from
+            my professor. She awarded the citation for my "unwavering dedication to the 
+            field of UI/UX through the culmination of my final class project."
+          </p>
         </div>
       </div>
 

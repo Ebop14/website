@@ -66,6 +66,7 @@ body {
   margin: 0.75vw;
   justify-content: flex-end;
   color: black;
+  font-size: 100%;
 }
 
 #topLink{
@@ -117,7 +118,7 @@ body {
 div.BigParagraph h1{
   margin: 4vh 6vw;
   color: black;
-  font-size: 125%;
+  font-size: 100%;
   font-family: Space Grotesk;
 }
 

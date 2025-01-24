@@ -22,7 +22,7 @@ function HorizontalItems(props){
     flexDirection: 'column', 
     borderStyle: 'solid',
     borderColor: 'white', 
-    width: '23.5%', 
+    width: '30%', 
     borderRadius: '5%', 
     alignItems: 'center',
     boxShadow: '2vh 2vw rgba(0, 0, 0, 0.5)',
@@ -41,7 +41,7 @@ function HorizontalItems(props){
         borderColor: 'white'}}></img>
 
       <h1 style={{ fontFamily: 'Space Grotesk', color: 'black'}}>{props.title}</h1>
-      <p style={{ fontFamily: 'Space Grotesk', color: 'black', paddingLeft:'5%', paddingRight:'5%'}}>{props.description}</p>
+      <p style={{ fontFamily: 'Space Grotesk', color: 'black', paddingLeft:'5%', paddingRight:'5%', fontSize: '90%'}}>{props.description}</p>
       </span>
   )
 }

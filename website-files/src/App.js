@@ -23,25 +23,25 @@ function HorizontalItems(props){
     borderStyle: 'solid',
     borderColor: 'white', 
     width: '23.5%', 
-    borderRadius: '10px', 
+    borderRadius: '5%', 
     alignItems: 'center',
-    boxShadow: '20px 20px rgba(0, 0, 0, 0.5)',
+    boxShadow: '2vh 2vw rgba(0, 0, 0, 0.5)',
     color: 'grey',
-    backgroundColor: '#B1DDF1',
+    backgroundColor: '#C89933',
     transition:'transform 0.2s'}}
-    onMouseOver={(e) => e.currentTarget.style.transform = 'translateX(10px)'}
-    onMouseOut={(e) =>  e.currentTarget.style.transform = 'translateX(-10px)'}
+    onMouseOver={(e) => e.currentTarget.style.transform = 'translateX(5%)'}
+    onMouseOut={(e) =>  e.currentTarget.style.transform = 'translateX(-5%)'}
 
     >
       <img src={props.picture}  
       style={{borderStyle: 'solid', 
-        borderRadius: '10px', 
+        borderRadius: '5%', 
         width: '100%', 
         height: '100%',
         borderColor: 'white'}}></img>
 
       <h1 style={{ fontFamily: 'Space Grotesk', color: 'black'}}>{props.title}</h1>
-      <p style={{ fontFamily: 'Space Grotesk', color: 'black', paddingLeft:'10px', paddingRight:'10px'}}>{props.description}</p>
+      <p style={{ fontFamily: 'Space Grotesk', color: 'black', paddingLeft:'5%', paddingRight:'5%'}}>{props.description}</p>
       </span>
   )
 }
@@ -71,7 +71,7 @@ function App() {
       </div>
       
 
-      <h1 style={{paddingLeft:'10px'}}>
+      <h1 style={{paddingLeft:'1%'}}>
           Hi! My name is Ethan, and I'm a Junior at Dartmouth double majoring in Economics and CS. Starting in my Freshman Summer, I have ~2 years worth of experience in Venture Capital at Battery Ventures.
           I'm looking for any operational roles at startups - reach out if you're building anything! I'm open to roles in Product, Sales, SWE, or Growth!
         </h1>

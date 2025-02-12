@@ -117,23 +117,19 @@ body {
   max-width: 80%;
   overflow: hidden;
 }
-
 div.BigParagraph h1{
-  margin: 4vh 6vw;
+  margin: 2vh;
   color: black;
   font-size: 100%;
   font-family: Space Grotesk;
 }
 
 .BigParagraph img{
-  flex-shrink: 1;
-  margin: 20%;
-
-  max-width: 200%;
+  margin: 1vh 2vw;
+  max-width: 25%;
   height: auto;
   min-width: none;
 
-  object-fit: contain;
   display: block;
 }
 

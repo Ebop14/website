@@ -65,10 +65,8 @@ function App() {
     <div></div>
 
     <div className="BigParagraph" id="TopBox">
-      <div>
       <img src={headshot}
       ></img>
-      </div>
       
 
       <h1 style={{paddingLeft:'1%'}}>

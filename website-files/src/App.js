@@ -2,7 +2,7 @@ import './App.css';
 import rugbyImage from './images/rugbyPic.jpeg';
 import batteryPic from './images/battery_selfie.jpg';
 import bananna from './images/IMG_9674_Original.jpg';
-import headshot from './images/headshot.jpeg';
+import headshot from './images/headshot.jpg';
 import resume from './Resume.pdf';
 import battery from './images/battery.png'
 import workHard from "./images/work_hard_play_hard.mov"

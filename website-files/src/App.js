@@ -7,6 +7,7 @@ import resume from './Resume.pdf';
 import battery from './images/battery.png'
 import workHard from "./images/work_hard_play_hard.mov"
 import hackLab from "./images/hacklab-pic.png"
+import { useState } from 'react';
 
 function Header(){
   return(
@@ -18,48 +19,54 @@ function Header(){
 
 function HorizontalItems(props){
   return(
-    <span style={{display: 'flex', 
-    flexDirection: 'column', 
-    borderStyle: 'solid',
-    borderColor: 'white', 
-    width: '30%', 
-    borderRadius: '5%', 
-    alignItems: 'center',
-    boxShadow: '2vh 2vw rgba(0, 0, 0, 0.5)',
-    color: 'grey',
-    backgroundColor: '#C89933',
-    transition:'transform 0.2s'}}
-    onMouseOver={(e) => e.currentTarget.style.transform = 'translateX(2.5%)'}
-    onMouseOut={(e) =>  e.currentTarget.style.transform = 'translateX(-2.5%)'}
-
+    <div className="HorizontalItems"
+      style={{
+        borderStyle: 'solid',
+        borderColor: 'white',
+        borderRadius: '5%',
+        boxShadow: '2vh 2vw rgba(0, 0, 0, 0.5)',
+        color: 'grey',
+        backgroundColor: '#C89933',
+        transition: 'transform 0.2s'
+      }}
+      onMouseOver={e => e.currentTarget.style.transform = 'translateX(2.5%)'}
+      onMouseOut={e => e.currentTarget.style.transform = 'translateX(-2.5%)'}
     >
-      <img src={props.picture}  
-      style={{borderStyle: 'solid', 
-        borderRadius: '5%', 
-        width: '100%', 
-        height: '100%',
-        borderColor: 'white'}}></img>
-
+      <img src={props.picture}
+        style={{
+          borderStyle: 'solid',
+          borderRadius: '5%',
+          width: '100%',
+          height: '100%',
+          borderColor: 'white'
+        }}
+      />
       <h1 style={{ fontFamily: 'Space Grotesk', color: 'black'}}>{props.title}</h1>
       <p style={{ fontFamily: 'Space Grotesk', color: 'black', paddingLeft:'5%', paddingRight:'5%', fontSize: '90%'}}>{props.description}</p>
-      </span>
+    </div>
   )
 }
 
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <>
     <div id="Navbar">
-    
-      <div class="nav-links">
-        <a id="topLink" href="#TopBox">Home</a>
-        <a id="topLink" href="#AboutMeBox">About Me</a>
-        <a id="topLink" href="#ProjectTitle">Projects</a>
-        <a id="topLink" href="#ContactBox">Contact</a>
-
+      <button className="mobile-menu-button" onClick={toggleMenu}>
+        <span className="hamburger"></span>
+      </button>
+      <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+        <a id="topLink" href="#TopBox" onClick={() => setIsMenuOpen(false)}>Home</a>
+        <a id="topLink" href="#AboutMeBox" onClick={() => setIsMenuOpen(false)}>About Me</a>
+        <a id="topLink" href="#ProjectTitle" onClick={() => setIsMenuOpen(false)}>Projects</a>
+        <a id="topLink" href="#ContactBox" onClick={() => setIsMenuOpen(false)}>Contact</a>
       </div>
-
     </div>
 
     <div></div>
@@ -70,14 +77,14 @@ function App() {
       
 
       <h1 style={{paddingLeft:'1%'}}>
-          Hi! My name is Ethan, and I'm a Junior at Dartmouth double majoring in Economics and CS. Starting in my Freshman Summer, I have ~2 years worth of experience in Venture Capital at Battery Ventures.
-          I'm looking for any operational roles at startups - reach out if you're building anything! I'm open to roles in Product, Sales, SWE, or Growth!
+          Hi! My name is Ethan, and I'm a Senior at Dartmouth double majoring in Economics and CS. Starting in my Freshman Summer, I have ~2 years worth of experience in Venture Capital at Battery Ventures.
+          I'll be working at Ramp over the Summer as a SDR Intern!
         </h1>
     </div>
     
 
     <div className="App">
-      <div id='AboutMeBox'>
+      <div className="AboutMeGrid">
         <HorizontalItems
         picture={rugbyImage}
         title="Rugby"

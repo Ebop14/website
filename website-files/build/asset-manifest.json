@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.068d571b.css",
-    "main.js": "/static/js/main.1a6b6803.js",
+    "main.css": "/static/css/main.d54e7863.css",
+    "main.js": "/static/js/main.f83bf2d7.js",
     "static/js/488.d811d7da.chunk.js": "/static/js/488.d811d7da.chunk.js",
     "static/media/work_hard_play_hard.mov": "/static/media/work_hard_play_hard.8cff204252ddf5dce998.mov",
     "static/media/rugbyPic.jpeg": "/static/media/rugbyPic.5d5a4e08191fc660662c.jpeg",
+    "static/media/headshot.jpg": "/static/media/headshot.50211762a257e87b231a.jpg",
     "static/media/battery_selfie.jpg": "/static/media/battery_selfie.e49baf944e4fba923190.jpg",
     "static/media/IMG_9674_Original.jpg": "/static/media/IMG_9674_Original.e8dadb80d26d349a6194.jpg",
-    "static/media/Resume.pdf": "/static/media/Resume.5fb8dff0f102496c8832.pdf",
+    "static/media/Resume.pdf": "/static/media/Resume.4e3c8312b8fe6daa6ba5.pdf",
     "static/media/battery.png": "/static/media/battery.460bae036281c6c122ee.png",
     "static/media/hacklab-pic.png": "/static/media/hacklab-pic.8b42a5c1e69d09f6ed55.png",
     "index.html": "/index.html",
-    "main.068d571b.css.map": "/static/css/main.068d571b.css.map",
-    "main.1a6b6803.js.map": "/static/js/main.1a6b6803.js.map",
+    "main.d54e7863.css.map": "/static/css/main.d54e7863.css.map",
+    "main.f83bf2d7.js.map": "/static/js/main.f83bf2d7.js.map",
     "488.d811d7da.chunk.js.map": "/static/js/488.d811d7da.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.068d571b.css",
-    "static/js/main.1a6b6803.js"
+    "static/css/main.d54e7863.css",
+    "static/js/main.f83bf2d7.js"
   ]
 }

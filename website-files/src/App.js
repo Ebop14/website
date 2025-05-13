@@ -77,8 +77,11 @@ function App() {
       
 
       <h1 style={{paddingLeft:'1%'}}>
-          Hi! My name is Ethan, and I'm a Senior at Dartmouth double majoring in Economics and CS. Starting in my Freshman Summer, I have ~2 years worth of experience in Venture Capital at Battery Ventures.
-          I'll be working at Ramp over the Summer as a SDR Intern!
+          Hi! My name is Ethan, and I'm a Senior at Dartmouth double majoring in Economics and CS. Starting in my Freshman Summer, 
+          I've been working in VC, and thus far, I have ~2 years worth of experience in at Battery Ventures.
+          Outside of work, I do freelance consulting for startups on-campus, helping multiple
+          companies with their fundraising efforts.
+          This Summer, I'll be working at Ramp as an SDR Intern!
         </h1>
     </div>
     
@@ -134,7 +137,7 @@ function App() {
             I was also interviewed ~600 applicants for the Externship, assessing students on technicals, VC knowledge, and behavioral questions.</p>
         </div>
       </div>
-
+      
       <div className="Projects" id="Hacklab">
         <h1>Hacklab: Binary Analysis CTFs</h1>
 

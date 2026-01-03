@@ -5,6 +5,8 @@ import bananna from './images/IMG_9674_Original.jpg';
 import headshot from './images/headshot.jpg';
 import resume from './Resume.pdf';
 import battery from './images/battery.png'
+import ping from './images/ping.png'
+import ai from './images/AI-customer.jpg'
 import workHard from "./images/work_hard_play_hard.mov"
 import hackLab from "./images/hacklab-pic.png"
 import { useState } from 'react';
@@ -33,6 +35,7 @@ function HorizontalItems(props){
       onMouseOut={e => e.currentTarget.style.transform = 'translateX(-2.5%)'}
     >
       <img src={props.picture}
+        alt={props.title}
         style={{
           borderStyle: 'solid',
           borderRadius: '5%',
@@ -72,7 +75,7 @@ function App() {
     <div></div>
 
     <div className="BigParagraph" id="TopBox">
-      <img src={headshot}
+      <img src={headshot} alt="Ethan Child headshot"
       ></img>
       
 
@@ -101,7 +104,7 @@ function App() {
         <HorizontalItems
         picture={batteryPic}
         title="VC"
-        description="Through a combination of remote and in-person internships, I've worked in Venture Capital at Battery Ventures for ~2 years. I started working at Battery my Freshman Summer, sourcing companies. My performance enventually led to a 10 month, full-time, off-cycle internship offer."
+        description="Through a combination of remote and in-person internships, I've worked in Venture Capital at Battery Ventures for ~2 years. I started working at Battery my Freshman Summer, sourcing companies. My performance eventually led to a 10 month, full-time, off-cycle internship offer."
         ></HorizontalItems>
 
       </div>
@@ -112,11 +115,13 @@ function App() {
         </div>
       </div>
 
+      
+
       <div className="Projects" id="Pipeline">
         <h1>Deal Pipeline</h1>
 
         <div>
-          <img src={battery}></img>
+          <img src={battery} alt="Battery Ventures"></img>
 
           <p>At Battery, I cultivated a deal pipeline of ~1000+ companies, sourcing more than 100 companies per week and resulting in ~20 proprietary deals.  
             Thanks to my extended internship, I commanded more responsibility than other interns - whilst other interns led calls with Associates and Analysts present, I led them alone. 
@@ -129,12 +134,12 @@ function App() {
         <h1>Battery Ventures Externship</h1>
 
         <div>
-          <img src={battery}></img>
+          <img src={battery} alt="Battery Ventures Externship"></img>
 
           <p>In addition to typical analyst responsibilities, I was also tasked with running the Battery Ventures Externship, a remote 50-person program dedicated to educating students in 
             Venture Capital. I created / cultivated ~100 hours worth of VC-related training material and taught 16 live weekly lessons about VC principles
             such as initial outreach, ARR waterfalls, and SaaS metrics. My work running the Externship resulted in ~2,000 companies sourced and 17 diligence projects completed. 
-            I was also interviewed ~600 applicants for the Externship, assessing students on technicals, VC knowledge, and behavioral questions.</p>
+            I also interviewed ~600 applicants for the Externship, assessing students on technicals, VC knowledge, and behavioral questions.</p>
         </div>
       </div>
       
@@ -142,7 +147,7 @@ function App() {
         <h1>Hacklab: Binary Analysis CTFs</h1>
 
         <div>
-          <img src={hackLab}></img>
+          <img src={hackLab} alt="Hacklab CTF"></img>
 
           <p>In my Junior Fall, I took a hacking / cybersecurity course that required me to
             to exploit binaries, pop shells and find flags. Most of the course was an
@@ -159,7 +164,7 @@ function App() {
         <h1>Work Hard Play Hard</h1>
 
         <div>
-          <video autoplay muted controls playsinline src={workHard}></video>
+          <video autoPlay muted controls playsInline src={workHard} aria-label="Work Hard Play Hard demo"></video>
 
           <p>For my final project in COSC 25, I designed a Figma prototype for college students
             to improve time management, mental health, and social adaptivity. My design process
@@ -169,6 +174,37 @@ function App() {
             assets. For my work, I received a citation (the highest grade possible) from
             my professor. She awarded the citation for my "unwavering dedication to the 
             field of UI/UX through the culmination of my final class project."
+          </p>
+        </div>
+      </div>
+
+<div className="Projects" id="AICustomerService">
+        <h1>AI Customer Service Agent</h1>
+
+        <div>
+          <img src={ai} alt="AI Customer Service"></img>
+
+          <p> In the midst of the US-China tariffs, I approached a fast-growing e-Commerce company as a freelance programmer. Due to tariffs, increased tickets, and 
+            the company's rapid growth, the CS team was overwhelmed. I coded an AI agent that pulled 4K+ tickets from a CS rep and wrote a performance review, complete with in-text references.
+            Due to cost contraints, I had to dynamically chunk data by adjusting the number of tickets pulled for review. I therefore chunked tickets by context window, allowing for robust analysis 
+            of multiple tickets. To handle dynamic reviews, I wrote a frontend for the CEO to view / export reviews and adjust the number of tickets pulled for review. 
+            All in all, I reduced time to review from ~3 hours per week to minutes, allowing for more frequent reviews and visibility into team dynamics. 
+          </p>
+        </div>
+      </div>
+
+      <div className="Projects" id="PongPing">
+        <h1>Pong Ping</h1>
+
+        <div>
+          <img src={ping} alt="Pong Ping"></img>
+
+          <p>Used Jira and Github to work with 5 developers in a full-stack environment to build a campus-wide app for pong matchmaking. Ideated over design, backend logic, and user flow,
+          and eventually settled on five key features: Game Building, Profile Creation, Private Groups, Leaderboard, and Tournaments. 
+          Used Bun, MongoDB, Typescript, Gluestack and Axios to code easy game building and a four-player ELO score algorithm.
+          As a developer, I was responsible for the full-stack implementation of the tournament feature, and a bit of the game building feature. 
+          I wrote backend logic for building, starting, creating, and joining tournaments. I wrote a dynamic algorithm to automatically seed higher-ranked players,
+          creating optimal matchups for each round.
           </p>
         </div>
       </div>

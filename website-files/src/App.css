@@ -503,3 +503,13 @@ body {
     margin: 0;
   }
 }
+
+#AICustomerService {
+  background-color: #8E44AD;  /* Rich purple */
+  color: #F5EEF8;  /* Light purple */
+}
+
+#PongPing {
+  background-color: #27AE60;  /* Emerald green */
+  color: #E8F8F5;  /* Light mint */
+}

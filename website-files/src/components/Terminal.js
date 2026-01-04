@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './Terminal.css';
 import headshot from '../images/headshot.jpg';
 
@@ -370,35 +370,41 @@ When answering questions:
 5. If asked what Ethan looks like, mention that his headshot is displayed on the terminal interface
 `;
 
+// Quick commands for welcome section
+const QUICK_COMMANDS = [
+  { label: 'View About', command: 'cat about.txt' },
+  { label: 'List Projects', command: 'ls projects' },
+  { label: 'View Skills', command: 'cat skills.txt' },
+  { label: 'Chat with AI', command: '/ai' },
+];
+
 function Terminal() {
-  const [messages, setMessages] = useState([
-    { type: 'system', content: 'Welcome to Ethan Child\'s Portfolio Terminal' },
-    { type: 'system', content: 'Type "help" for available commands, or "/ai" to chat with AI.' },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [currentPath, setCurrentPath] = useState('~');
   const [isLoading, setIsLoading] = useState(false);
   const [currentThinking, setCurrentThinking] = useState('');
   const [showThinking, setShowThinking] = useState(true);
   const [aiMode, setAiMode] = useState(false);
-  const [aiHistory, setAiHistory] = useState([]); // Tracks conversation for API
+  const [aiHistory, setAiHistory] = useState([]);
+  const [showWelcome, setShowWelcome] = useState(true);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
-  const scrollToBottom = () => {
+  const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  }, []);
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages, currentThinking]);
+  }, [messages, currentThinking, scrollToBottom]);
 
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
 
   // Get directory at path
-  const getNodeAtPath = (path) => {
+  const getNodeAtPath = useCallback((path) => {
     if (path === '~') return FILE_SYSTEM['~'];
 
     const parts = path.split('/').filter(p => p && p !== '~');
@@ -411,10 +417,10 @@ function Terminal() {
       current = current.children[part];
     }
     return current;
-  };
+  }, []);
 
   // Resolve relative path
-  const resolvePath = (relativePath) => {
+  const resolvePath = useCallback((relativePath) => {
     if (relativePath === '~' || relativePath === '/') return '~';
     if (relativePath.startsWith('~/')) return relativePath;
 
@@ -430,32 +436,42 @@ function Terminal() {
     }
 
     return parts.length === 0 ? '~' : '~/' + parts.join('/');
-  };
+  }, [currentPath]);
 
   // Command handlers
-  const handleCommand = (cmd) => {
+  const handleCommand = useCallback((cmd) => {
     const parts = cmd.trim().split(/\s+/);
     const command = parts[0].toLowerCase();
     const args = parts.slice(1);
+
+    // Hide welcome on first command
+    if (showWelcome) {
+      setShowWelcome(false);
+    }
 
     switch (command) {
       case 'help':
         return {
           type: 'output',
-          content: `Available commands:
-  ls [dir]      List directory contents
-  cd <dir>      Change directory
-  cat <file>    Display file contents
-  pwd           Print working directory
-  clear         Clear terminal
-  /ai           Enter AI chat mode
-  /exit         Exit AI chat mode
-  help          Show this help message
+          content: `COMMANDS
+────────────────────────────────
+  ls [dir]       List directory contents
+  cd <dir>       Change directory
+  cat <file>     Display file contents
+  pwd            Print working directory
+  clear          Clear terminal
+  help           Show this help message
 
-Directories:
-  ~/experience     Work experience
-  ~/projects       Project portfolio
-  ~/extracurricular Activities`
+AI MODE
+────────────────────────────────
+  /ai            Enter AI chat mode
+  /exit          Exit AI chat mode
+
+DIRECTORIES
+────────────────────────────────
+  ~/experience      Work history
+  ~/projects        Portfolio projects
+  ~/extracurricular Activities & clubs`
         };
 
       case 'pwd':
@@ -518,29 +534,31 @@ Directories:
 
       case 'clear':
         setMessages([]);
+        setShowWelcome(true);
         return null;
 
       case '/ai':
         setAiMode(true);
-        return { type: 'system', content: 'Entering AI chat mode. Ask me anything about Ethan. Type "/exit" to return to terminal.' };
+        return { type: 'system', content: 'AI mode activated. Ask me anything about Ethan!' };
 
       case '/exit':
         if (aiMode) {
           setAiMode(false);
-          return { type: 'system', content: 'Exited AI chat mode. Type "help" for commands.' };
+          setAiHistory([]);
+          return { type: 'system', content: 'Exited AI mode. Type "help" for commands.' };
         }
         return { type: 'error', content: 'Not in AI mode' };
 
       default:
         if (command.startsWith('/')) {
-          return { type: 'error', content: `Unknown command: ${command}. Type "help" for available commands.` };
+          return { type: 'error', content: `Unknown command: ${command}` };
         }
-        return { type: 'error', content: `${command}: command not found. Type "help" for available commands.` };
+        return { type: 'error', content: `${command}: command not found` };
     }
-  };
+  }, [currentPath, showWelcome, aiMode, resolvePath, getNodeAtPath]);
 
   // AI Chat handler
-  const handleAiChat = async (message) => {
+  const handleAiChat = useCallback(async (message) => {
     setIsLoading(true);
     setCurrentThinking('');
 
@@ -579,7 +597,9 @@ Directories:
               } else if (data.type === 'text') {
                 responseContent += data.content;
               }
-            } catch (e) {}
+            } catch (e) {
+              // Skip malformed JSON
+            }
           }
         }
       }
@@ -592,7 +612,6 @@ Directories:
 
       setMessages(prev => [...prev, ...newMessages]);
 
-      // Update AI history for context (user message + assistant response)
       setAiHistory(prev => [
         ...prev,
         { role: 'user', content: message },
@@ -604,29 +623,33 @@ Directories:
       setIsLoading(false);
       setCurrentThinking('');
     }
-  };
+  }, [aiHistory, showThinking]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
 
     const userInput = input.trim();
     setInput('');
 
-    // Add user input to messages
+    // Hide welcome on interaction
+    if (showWelcome) {
+      setShowWelcome(false);
+    }
+
     setMessages(prev => [...prev, { type: 'user', content: userInput, path: currentPath }]);
 
-    // Check for mode switch commands even in AI mode
+    // Check for mode switch commands
     if (userInput.toLowerCase() === '/exit' && aiMode) {
       setAiMode(false);
-      setAiHistory([]); // Clear conversation history
-      setMessages(prev => [...prev, { type: 'system', content: 'Exited AI chat mode. Type "help" for commands.' }]);
+      setAiHistory([]);
+      setMessages(prev => [...prev, { type: 'system', content: 'Exited AI mode. Type "help" for commands.' }]);
       return;
     }
 
     if (userInput.toLowerCase() === '/ai' && !aiMode) {
       setAiMode(true);
-      setMessages(prev => [...prev, { type: 'system', content: 'Entering AI chat mode. Ask me anything about Ethan. Type "/exit" to return to terminal.' }]);
+      setMessages(prev => [...prev, { type: 'system', content: 'AI mode activated. Ask me anything about Ethan!' }]);
       return;
     }
 
@@ -638,12 +661,30 @@ Directories:
         setMessages(prev => [...prev, result]);
       }
     }
-  };
+  }, [input, isLoading, showWelcome, currentPath, aiMode, handleAiChat, handleCommand]);
 
-  const getPromptPath = () => {
+  const handleQuickCommand = useCallback((command) => {
+    setShowWelcome(false);
+
+    if (command === '/ai') {
+      setAiMode(true);
+      setMessages(prev => [...prev,
+        { type: 'user', content: command, path: currentPath },
+        { type: 'system', content: 'AI mode activated. Ask me anything about Ethan!' }
+      ]);
+    } else {
+      setMessages(prev => [...prev, { type: 'user', content: command, path: currentPath }]);
+      const result = handleCommand(command);
+      if (result) {
+        setMessages(prev => [...prev, result]);
+      }
+    }
+  }, [currentPath, handleCommand]);
+
+  const getPromptPath = useCallback(() => {
     if (currentPath === '~') return '~';
     return currentPath.replace('~/', '');
-  };
+  }, [currentPath]);
 
   return (
     <div className="terminal-container">
@@ -675,12 +716,35 @@ Directories:
 
       <div className="terminal-main">
         <div className="terminal-header">
-          <span className="terminal-title">ethan@portfolio:{getPromptPath()}{aiMode ? ' [AI]' : ''}</span>
+          <span className="terminal-title">
+            ethan@portfolio:{getPromptPath()}
+            {aiMode && <span className="mode-badge">AI</span>}
+          </span>
         </div>
 
         <div className="terminal-body">
           <div className="terminal-messages">
             <div className="terminal-messages-inner">
+              {showWelcome && (
+                <div className="welcome-section">
+                  <div className="welcome-title">Welcome to Ethan's Portfolio</div>
+                  <div className="welcome-subtitle">
+                    Navigate using terminal commands or chat with AI to learn more about my experience, projects, and skills.
+                  </div>
+                  <div className="quick-commands">
+                    {QUICK_COMMANDS.map((cmd, idx) => (
+                      <button
+                        key={idx}
+                        className="quick-command"
+                        onClick={() => handleQuickCommand(cmd.command)}
+                      >
+                        <code>{cmd.command}</code> {cmd.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {messages.map((msg, idx) => (
                 <div key={idx} className={`terminal-message ${msg.type}`}>
                   {msg.type === 'user' && (
@@ -691,7 +755,7 @@ Directories:
                   )}
                   {msg.type === 'thinking' && (
                     <div className="thinking-block">
-                      <div className="thinking-header">[ AI Thinking ]</div>
+                      <div className="thinking-header">AI Thinking</div>
                       <div className="thinking-content">{msg.content}</div>
                     </div>
                   )}
@@ -705,7 +769,7 @@ Directories:
                 <div className="terminal-message loading">
                   {currentThinking && showThinking ? (
                     <div className="thinking-block active">
-                      <div className="thinking-header">[ AI Thinking... ]</div>
+                      <div className="thinking-header">AI Thinking...</div>
                       <div className="thinking-content">{currentThinking}</div>
                     </div>
                   ) : (

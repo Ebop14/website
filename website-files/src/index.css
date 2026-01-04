@@ -7,23 +7,23 @@ html, body, #root {
 }
 
 body {
-  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #000000;
+  background: #0a0a0a;
 }
 
 code {
-  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
 }
 
 ::selection {
-  background: #ffffff;
-  color: #000000;
+  background: #6366f1;
+  color: #ffffff;
 }
 
 ::-moz-selection {
-  background: #ffffff;
-  color: #000000;
+  background: #6366f1;
+  color: #ffffff;
 }
